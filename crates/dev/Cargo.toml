@@ -1,0 +1,12 @@
+[package]
+name = "dev"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+itertools = "0.12.1"
+wax = "0.6.0"
+pretty-tree = { workspace = true }
+
+[dependencies.markdown-format]
+path = "../markdown-format"

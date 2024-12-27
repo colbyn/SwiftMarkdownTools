@@ -1,0 +1,16 @@
+[package]
+name = "markdown-format"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+# serde_json = { version = "1.0", features = ["preserve_order"] }
+serde_json = { version = "1.0" }
+itertools = "0.12.1"
+markdown = "=1.0.0-alpha.21"
+pretty-tree = { workspace = true }
+
+# [dependencies.pretty-tree]
+# git = "https://github.com/colbyn/pretty-tree-rs.git"
+# rev = "f302ceb"

@@ -1,0 +1,4 @@
+module MarkdownParserFFI {
+  header "markdown_parser_ffi.h"
+  export *
+}

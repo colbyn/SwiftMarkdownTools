@@ -1,0 +1,13 @@
+[workspace]
+resolver = "2"
+members = [ "dev", "markdown-format","markdown-parser-ffi"]
+
+[workspace.dependencies.pretty-tree]
+git = "https://github.com/colbyn/pretty-tree-rs.git"
+rev = "baba584"
+
+[profile.release]
+lto = "fat"
+codegen-units = 1
+opt-level = 3
+# opt-level = 1
