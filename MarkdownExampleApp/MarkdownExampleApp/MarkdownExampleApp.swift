@@ -9,7 +9,7 @@ import SwiftUI
 import FastMarkdownParser
 
 @main
-struct MarkdownExampleAppApp: App {
+struct MarkdownExampleApp: App {
     var body: some Scene {
         WindowGroup {
             Text("TODO").onAppear {

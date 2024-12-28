@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F41C66382D1F756400D7209C /* MarkdownExampleAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C66372D1F756400D7209C /* MarkdownExampleAppApp.swift */; };
+		F41C66382D1F756400D7209C /* MarkdownExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C66372D1F756400D7209C /* MarkdownExampleApp.swift */; };
 		F41C663A2D1F756400D7209C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C66392D1F756400D7209C /* ContentView.swift */; };
 		F41C663C2D1F756600D7209C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F41C663B2D1F756600D7209C /* Assets.xcassets */; };
 		F41C66402D1F756600D7209C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F41C663F2D1F756600D7209C /* Preview Assets.xcassets */; };
@@ -36,7 +36,7 @@
 
 /* Begin PBXFileReference section */
 		F41C66342D1F756400D7209C /* MarkdownExampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarkdownExampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F41C66372D1F756400D7209C /* MarkdownExampleAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownExampleAppApp.swift; sourceTree = "<group>"; };
+		F41C66372D1F756400D7209C /* MarkdownExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownExampleApp.swift; sourceTree = "<group>"; };
 		F41C66392D1F756400D7209C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F41C663B2D1F756600D7209C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F41C663D2D1F756600D7209C /* MarkdownExampleApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MarkdownExampleApp.entitlements; sourceTree = "<group>"; };
@@ -97,7 +97,7 @@
 		F41C66362D1F756400D7209C /* MarkdownExampleApp */ = {
 			isa = PBXGroup;
 			children = (
-				F41C66372D1F756400D7209C /* MarkdownExampleAppApp.swift */,
+				F41C66372D1F756400D7209C /* MarkdownExampleApp.swift */,
 				F41C66392D1F756400D7209C /* ContentView.swift */,
 				F41C663B2D1F756600D7209C /* Assets.xcassets */,
 				F41C663D2D1F756600D7209C /* MarkdownExampleApp.entitlements */,
@@ -268,7 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F41C663A2D1F756400D7209C /* ContentView.swift in Sources */,
-				F41C66382D1F756400D7209C /* MarkdownExampleAppApp.swift in Sources */,
+				F41C66382D1F756400D7209C /* MarkdownExampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
