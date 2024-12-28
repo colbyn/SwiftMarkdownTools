@@ -37,7 +37,7 @@ mkdir -p $DIST_DIRECTORY/universal/XCFrameworks
 echo "${ECHO_CYAN}BUILDING: ${ECHO_GREEN}C HEADER FILE${ECHO_NC}"
 cd $ROOT_DIRECTORY
 cbindgen --config markdown-parser-ffi/cbindgen.toml --crate markdown-parser-ffi --output $DIST_DIRECTORY/include/markdown_parser_ffi.h
-cp $ROOT_DIRECTORY/assets/MarkdownParserFFI/module.modulemap $DIST_DIRECTORY/include/module.modulemap
+cp $ROOT_DIRECTORY/assets/include/module.modulemap $DIST_DIRECTORY/include/module.modulemap
 
 ###############################################################################
 # BUILD NATIVE MAC-OS
