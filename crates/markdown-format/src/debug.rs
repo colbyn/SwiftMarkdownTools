@@ -43,7 +43,7 @@ impl ToPrettyTree for Node {
             Self::HorizontalDivider(x) => x.to_pretty_tree(),
             Self::Definition(x) => x.to_pretty_tree(),
             Self::Paragraph(x) => x.to_pretty_tree(),
-            Self::BlockQuote(x) => x.to_pretty_tree(),
+            Self::Blockquote(x) => x.to_pretty_tree(),
             Self::FootnoteReference(x) => x.to_pretty_tree(),
             Self::FootnoteDefinition(x) => x.to_pretty_tree(),
             Self::Toml(x) => x.to_pretty_tree(),
@@ -195,7 +195,7 @@ impl ToPrettyTree for Html {
         ])
     }
 }
-impl ToPrettyTree for BlockQuote {
+impl ToPrettyTree for Blockquote {
     fn to_pretty_tree(&self) -> pretty_tree::PrettyTree {
         pretty_tree::branch_of("BlockQuote", vec![
             // pretty_tree::field("position", &self.position),
@@ -310,4 +310,36 @@ fn children<T: pretty_tree::ToPrettyTree>(field_name: &str, children: &[T]) -> p
         .map(|x| x.to_pretty_tree())
         .collect_vec();
     pretty_tree::PrettyTree::branch_of(field_name, children)
+}
+
+impl pretty_tree::ToPrettyTree for crate::data::ReferenceKind {
+    fn to_pretty_tree(&self) -> pretty_tree::PrettyTree {
+        match self {
+            Self::Collapsed => pretty_tree::value(String::from("Self::Collapsed")),
+            Self::Full => pretty_tree::value(String::from("Self::Full")),
+            Self::Shortcut => pretty_tree::value(String::from("Self::Shortcut")),
+        }
+    }
+}
+impl pretty_tree::ToPrettyTree for crate::data::HeadingLevel {
+    fn to_pretty_tree(&self) -> pretty_tree::PrettyTree {
+        match self {
+            Self::H1 => pretty_tree::value("HeadingLevel::H1"),
+            Self::H2 => pretty_tree::value("HeadingLevel::H2"),
+            Self::H3 => pretty_tree::value("HeadingLevel::H3"),
+            Self::H4 => pretty_tree::value("HeadingLevel::H4"),
+            Self::H5 => pretty_tree::value("HeadingLevel::H5"),
+            Self::H6 => pretty_tree::value("HeadingLevel::H6"),
+        }
+    }
+}
+impl pretty_tree::ToPrettyTree for crate::data::AlignKind {
+    fn to_pretty_tree(&self) -> pretty_tree::PrettyTree {
+        match self {
+            Self::Left => pretty_tree::value("AlignKind::Left"),
+            Self::Right => pretty_tree::value("AlignKind::Right"),
+            Self::Center => pretty_tree::value("AlignKind::Center"),
+            Self::None => pretty_tree::value("AlignKind::None"),
+        }
+    }
 }

@@ -1,11 +1,11 @@
 //! Markdown AST.
-pub use crate::common::{SourceRange, Point};
 
 //―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
 // MARKDOWN AST
 //―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
 /// A general enumeration of Markdown elements.
 #[derive(Debug, Clone, serde::Serialize)]
+#[serde(tag = "type")]
 pub enum Node {
     Text(Text),
     Newline(Newline),
@@ -27,7 +27,7 @@ pub enum Node {
     HorizontalDivider(HorizontalDivider),
     Definition(Definition),
     Paragraph(Paragraph),
-    BlockQuote(BlockQuote),
+    Blockquote(Blockquote),
     FootnoteReference(FootnoteReference),
     FootnoteDefinition(FootnoteDefinition),
     DisplayMath(DisplayMath),
@@ -203,7 +203,7 @@ pub struct LinkReference {
     pub position: Option<SourceRange>,
     // Reference.
     /// Explicitness of a reference.
-    pub reference_kind: crate::common::ReferenceKind,
+    pub reference_kind: ReferenceKind,
     // Association.
     /// Value that can match another node.
     /// `identifier` is a source value: character escapes and character references
@@ -247,7 +247,7 @@ pub struct ImageReference {
     pub alt: String,
     // Reference.
     /// Explicitness of a reference.
-    pub reference_kind: crate::common::ReferenceKind,
+    pub reference_kind: ReferenceKind,
     // Association.
     /// Value that can match another node.
     /// `identifier` is a source value: character escapes and character references
@@ -323,7 +323,7 @@ pub struct Html {
 // # BLOCK NODES
 //―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
 #[derive(Debug, Clone, serde::Serialize)]
-pub struct BlockQuote {
+pub struct Blockquote {
     // Parent.
     /// Content model.
     pub children: Vec<Node>,
@@ -342,7 +342,7 @@ pub struct Paragraph {
 
 #[derive(Debug, Clone, serde::Serialize)]
 pub struct Heading {
-    pub level: crate::common::HeadingLevel,
+    pub level: HeadingLevel,
     // Parent.
     /// Content model.
     pub children: Vec<Node>,
@@ -463,7 +463,7 @@ pub struct Table {
     pub position: Option<SourceRange>,
     // Extra.
     /// Represents how cells in columns are aligned.
-    pub alignment: Vec<crate::common::AlignKind>,
+    pub alignment: Vec<AlignKind>,
 }
 
 /// GFM: table row.
@@ -534,14 +534,62 @@ pub struct ListItem {
 }
 
 #[derive(Debug, Clone, serde::Serialize)]
+#[serde(rename_all = "lowercase")]
 pub enum ListType {
     Ordered,
     Unordered,
 }
 
+//―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+// # COMMON
+//―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
 #[derive(Debug, Clone, serde::Serialize)]
-pub enum ListItemType {
-    Ordered,
-    Unordered,
-    Task { checked: bool },
+#[serde(rename_all = "lowercase")]
+pub enum ReferenceKind {
+    /// The reference is implicit, its identifier inferred from its content.
+    Shortcut,
+    /// The reference is explicit, its identifier inferred from its content.
+    Collapsed,
+    /// The reference is explicit, its identifier explicitly set.
+    Full,
+}
+
+#[derive(Debug, Clone, serde::Serialize)]
+#[serde(rename_all = "lowercase")]
+pub enum HeadingLevel {
+    H1, H2, H3, H4, H5, H6
+}
+
+#[derive(Debug, Clone, PartialEq, Eq, serde::Serialize)]
+#[serde(rename_all = "lowercase")]
+pub enum AlignKind {
+    /// Left alignment.
+    Left,
+    /// Right alignment.
+    Right,
+    /// Center alignment.
+    Center,
+    /// No alignment.
+    None,
+}
+
+/// Location of a node in a source file.
+#[derive(Debug, Clone, serde::Serialize)]
+pub struct SourceRange {
+    /// Represents the place of the first character of the parsed source region.
+    pub start: Point,
+    /// Represents the place of the first character after the parsed source
+    /// region, whether it exists or not.
+    pub end: Point,
+}
+
+/// One place in a source file.
+#[derive(Debug, Clone, serde::Serialize)]
+pub struct Point {
+    /// 1-indexed integer representing a line in a source file.
+    pub line: usize,
+    /// 1-indexed integer representing a column in a source file.
+    pub column: usize,
+    /// 0-indexed integer representing a character in a source file.
+    pub offset: usize,
 }

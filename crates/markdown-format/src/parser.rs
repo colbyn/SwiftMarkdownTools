@@ -59,7 +59,7 @@ fn convert_node(node: &mdast::Node) -> Vec<ast::Node> {
                 .flat_map(convert_node)
                 .collect_vec();
             vec![
-                ast::Node::BlockQuote(ast::BlockQuote {
+                ast::Node::Blockquote(ast::Blockquote {
                     position,
                     children,
                 })
@@ -275,13 +275,13 @@ fn convert_node(node: &mdast::Node) -> Vec<ast::Node> {
             let position = node.position.clone().map(Into::<ast::SourceRange>::into);
             let children = node.children.iter().flat_map(convert_node).collect_vec();
             let level = match node.depth {
-                1 => crate::common::HeadingLevel::H1,
-                2 => crate::common::HeadingLevel::H2,
-                3 => crate::common::HeadingLevel::H3,
-                4 => crate::common::HeadingLevel::H4,
-                5 => crate::common::HeadingLevel::H5,
-                6 => crate::common::HeadingLevel::H6,
-                _ => crate::common::HeadingLevel::H1,
+                1 => crate::data::HeadingLevel::H1,
+                2 => crate::data::HeadingLevel::H2,
+                3 => crate::data::HeadingLevel::H3,
+                4 => crate::data::HeadingLevel::H4,
+                5 => crate::data::HeadingLevel::H5,
+                6 => crate::data::HeadingLevel::H6,
+                _ => crate::data::HeadingLevel::H1,
             };
             vec![
                 ast::Node::Heading(ast::Heading {
@@ -386,22 +386,22 @@ impl From<::markdown::unist::Point> for ast::Point {
         }
     }
 }
-impl From<::markdown::mdast::ReferenceKind> for crate::common::ReferenceKind {
+impl From<::markdown::mdast::ReferenceKind> for crate::data::ReferenceKind {
     fn from(value: ::markdown::mdast::ReferenceKind) -> Self {
         match value {
-            ::markdown::mdast::ReferenceKind::Collapsed => crate::common::ReferenceKind::Collapsed,
-            ::markdown::mdast::ReferenceKind::Full => crate::common::ReferenceKind::Full,
-            ::markdown::mdast::ReferenceKind::Shortcut => crate::common::ReferenceKind::Shortcut,
+            ::markdown::mdast::ReferenceKind::Collapsed => crate::data::ReferenceKind::Collapsed,
+            ::markdown::mdast::ReferenceKind::Full => crate::data::ReferenceKind::Full,
+            ::markdown::mdast::ReferenceKind::Shortcut => crate::data::ReferenceKind::Shortcut,
         }
     }
 }
-impl From<::markdown::mdast::AlignKind> for crate::common::AlignKind {
+impl From<::markdown::mdast::AlignKind> for crate::data::AlignKind {
     fn from(value: ::markdown::mdast::AlignKind) -> Self {
         match value {
-            ::markdown::mdast::AlignKind::Left => crate::common::AlignKind::Left,
-            ::markdown::mdast::AlignKind::Right => crate::common::AlignKind::Right,
-            ::markdown::mdast::AlignKind::Center => crate::common::AlignKind::Center,
-            ::markdown::mdast::AlignKind::None => crate::common::AlignKind::None,
+            ::markdown::mdast::AlignKind::Left => crate::data::AlignKind::Left,
+            ::markdown::mdast::AlignKind::Right => crate::data::AlignKind::Right,
+            ::markdown::mdast::AlignKind::Center => crate::data::AlignKind::Center,
+            ::markdown::mdast::AlignKind::None => crate::data::AlignKind::None,
         }
     }
 }

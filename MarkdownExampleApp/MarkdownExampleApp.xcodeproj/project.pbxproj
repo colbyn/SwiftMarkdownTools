@@ -15,6 +15,16 @@
 		F41C66542D1F756600D7209C /* MarkdownExampleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C66532D1F756600D7209C /* MarkdownExampleAppUITests.swift */; };
 		F41C66562D1F756600D7209C /* MarkdownExampleAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C66552D1F756600D7209C /* MarkdownExampleAppUITestsLaunchTests.swift */; };
 		F41C66642D1F758B00D7209C /* FastMarkdownParser in Frameworks */ = {isa = PBXBuildFile; productRef = F41C66632D1F758B00D7209C /* FastMarkdownParser */; };
+		F41C66672D1FC48400D7209C /* SwiftPrettyTree in Frameworks */ = {isa = PBXBuildFile; productRef = F41C66662D1FC48400D7209C /* SwiftPrettyTree */; };
+		F41C66692D20924800D7209C /* MarkdownDebugEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C66682D20924800D7209C /* MarkdownDebugEditor.swift */; };
+		F41C666B2D20934400D7209C /* MarkdownRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C666A2D20934400D7209C /* MarkdownRenderer.swift */; };
+		F41C666E2D2093D100D7209C /* sample1.md in Resources */ = {isa = PBXBuildFile; fileRef = F41C666D2D2093D100D7209C /* sample1.md */; };
+		F41C66702D20953900D7209C /* sample2.md in Resources */ = {isa = PBXBuildFile; fileRef = F41C666F2D20953900D7209C /* sample2.md */; };
+		F41C66722D20955600D7209C /* sample3.md in Resources */ = {isa = PBXBuildFile; fileRef = F41C66712D20955600D7209C /* sample3.md */; };
+		F41C66752D20957100D7209C /* sample4.md in Resources */ = {isa = PBXBuildFile; fileRef = F41C66742D20957100D7209C /* sample4.md */; };
+		F41C66772D2097D700D7209C /* SampleFileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C66762D2097D700D7209C /* SampleFileType.swift */; };
+		F41C66792D20B53A00D7209C /* WrapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C66782D20B53A00D7209C /* WrapView.swift */; };
+		F41C667B2D20B8C200D7209C /* DocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C667A2D20B8C200D7209C /* DocumentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +56,15 @@
 		F41C664F2D1F756600D7209C /* MarkdownExampleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarkdownExampleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F41C66532D1F756600D7209C /* MarkdownExampleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownExampleAppUITests.swift; sourceTree = "<group>"; };
 		F41C66552D1F756600D7209C /* MarkdownExampleAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownExampleAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F41C66682D20924800D7209C /* MarkdownDebugEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownDebugEditor.swift; sourceTree = "<group>"; };
+		F41C666A2D20934400D7209C /* MarkdownRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownRenderer.swift; sourceTree = "<group>"; };
+		F41C666D2D2093D100D7209C /* sample1.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = sample1.md; sourceTree = "<group>"; };
+		F41C666F2D20953900D7209C /* sample2.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = sample2.md; sourceTree = "<group>"; };
+		F41C66712D20955600D7209C /* sample3.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = sample3.md; sourceTree = "<group>"; };
+		F41C66742D20957100D7209C /* sample4.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = sample4.md; sourceTree = "<group>"; };
+		F41C66762D2097D700D7209C /* SampleFileType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleFileType.swift; sourceTree = "<group>"; };
+		F41C66782D20B53A00D7209C /* WrapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapView.swift; sourceTree = "<group>"; };
+		F41C667A2D20B8C200D7209C /* DocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F41C66672D1FC48400D7209C /* SwiftPrettyTree in Frameworks */,
 				F41C66642D1F758B00D7209C /* FastMarkdownParser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -97,11 +117,16 @@
 		F41C66362D1F756400D7209C /* MarkdownExampleApp */ = {
 			isa = PBXGroup;
 			children = (
-				F41C66372D1F756400D7209C /* MarkdownExampleApp.swift */,
-				F41C66392D1F756400D7209C /* ContentView.swift */,
-				F41C663B2D1F756600D7209C /* Assets.xcassets */,
 				F41C663D2D1F756600D7209C /* MarkdownExampleApp.entitlements */,
+				F41C66392D1F756400D7209C /* ContentView.swift */,
+				F41C667A2D20B8C200D7209C /* DocumentView.swift */,
+				F41C66682D20924800D7209C /* MarkdownDebugEditor.swift */,
+				F41C66372D1F756400D7209C /* MarkdownExampleApp.swift */,
+				F41C666A2D20934400D7209C /* MarkdownRenderer.swift */,
+				F41C66782D20B53A00D7209C /* WrapView.swift */,
+				F41C663B2D1F756600D7209C /* Assets.xcassets */,
 				F41C663E2D1F756600D7209C /* Preview Content */,
+				F41C666C2D2093C200D7209C /* samples */,
 			);
 			path = MarkdownExampleApp;
 			sourceTree = "<group>";
@@ -131,6 +156,18 @@
 			path = MarkdownExampleAppUITests;
 			sourceTree = "<group>";
 		};
+		F41C666C2D2093C200D7209C /* samples */ = {
+			isa = PBXGroup;
+			children = (
+				F41C666D2D2093D100D7209C /* sample1.md */,
+				F41C666F2D20953900D7209C /* sample2.md */,
+				F41C66712D20955600D7209C /* sample3.md */,
+				F41C66742D20957100D7209C /* sample4.md */,
+				F41C66762D2097D700D7209C /* SampleFileType.swift */,
+			);
+			path = samples;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -149,6 +186,7 @@
 			name = MarkdownExampleApp;
 			packageProductDependencies = (
 				F41C66632D1F758B00D7209C /* FastMarkdownParser */,
+				F41C66662D1FC48400D7209C /* SwiftPrettyTree */,
 			);
 			productName = MarkdownExampleApp;
 			productReference = F41C66342D1F756400D7209C /* MarkdownExampleApp.app */;
@@ -224,6 +262,7 @@
 			mainGroup = F41C662B2D1F756400D7209C;
 			packageReferences = (
 				F41C66622D1F758B00D7209C /* XCLocalSwiftPackageReference "../FastMarkdownParser" */,
+				F41C66652D1FC48400D7209C /* XCRemoteSwiftPackageReference "SwiftPrettyTree" */,
 			);
 			productRefGroup = F41C66352D1F756400D7209C /* Products */;
 			projectDirPath = "";
@@ -242,7 +281,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F41C66402D1F756600D7209C /* Preview Assets.xcassets in Resources */,
+				F41C66752D20957100D7209C /* sample4.md in Resources */,
+				F41C66702D20953900D7209C /* sample2.md in Resources */,
+				F41C666E2D2093D100D7209C /* sample1.md in Resources */,
 				F41C663C2D1F756600D7209C /* Assets.xcassets in Resources */,
+				F41C66722D20955600D7209C /* sample3.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,8 +310,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F41C66792D20B53A00D7209C /* WrapView.swift in Sources */,
+				F41C66692D20924800D7209C /* MarkdownDebugEditor.swift in Sources */,
 				F41C663A2D1F756400D7209C /* ContentView.swift in Sources */,
 				F41C66382D1F756400D7209C /* MarkdownExampleApp.swift in Sources */,
+				F41C666B2D20934400D7209C /* MarkdownRenderer.swift in Sources */,
+				F41C66772D2097D700D7209C /* SampleFileType.swift in Sources */,
+				F41C667B2D20B8C200D7209C /* DocumentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -635,10 +683,26 @@
 		};
 /* End XCLocalSwiftPackageReference section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		F41C66652D1FC48400D7209C /* XCRemoteSwiftPackageReference "SwiftPrettyTree" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/colbyn/SwiftPrettyTree.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		F41C66632D1F758B00D7209C /* FastMarkdownParser */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = FastMarkdownParser;
+		};
+		F41C66662D1FC48400D7209C /* SwiftPrettyTree */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F41C66652D1FC48400D7209C /* XCRemoteSwiftPackageReference "SwiftPrettyTree" */;
+			productName = SwiftPrettyTree;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

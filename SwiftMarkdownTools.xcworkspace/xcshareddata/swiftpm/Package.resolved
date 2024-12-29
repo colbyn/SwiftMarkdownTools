@@ -1,0 +1,15 @@
+{
+  "originHash" : "dea717f4fbf884c4827db42b6a051233f483ce86f38fa4b16514a08a91f8b143",
+  "pins" : [
+    {
+      "identity" : "swiftprettytree",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/colbyn/SwiftPrettyTree.git",
+      "state" : {
+        "revision" : "1926b30f9ff23c327dea8b3d96fe06082194fc6b",
+        "version" : "0.4.0"
+      }
+    }
+  ],
+  "version" : 3
+}
